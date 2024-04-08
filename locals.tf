@@ -8,9 +8,15 @@ locals {
   }
   workspaces = {
     "abbottm-workspace" = {
-      description         = "abbottm workspaces"
-      execution_mode      = "local"
-      name                = "abbottm-workspace"
+      description         = "abbottm workspace"
+      execution_mode      = "remote"
+      organization_name   = var.organization_name
+      project_id          = module.project["abbottm-project"].id
+      vcs_repo_identifier = "${var.github_organization_name}/fem-eci-terraform-tfe"
+    }
+    "abbottm-github" = {
+      description         = "abbottm github workspace"
+      execution_mode      = "remote"
       organization_name   = var.organization_name
       project_id          = module.project["abbottm-project"].id
       vcs_repo_identifier = "${var.github_organization_name}/fem-eci-terraform-tfe"

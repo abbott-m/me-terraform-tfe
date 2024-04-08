@@ -12,14 +12,14 @@ locals {
       execution_mode      = "remote"
       organization_name   = var.organization_name
       project_id          = module.project["abbottm-project"].id
-      vcs_repo_identifier = "${var.github_organization_name}/fem-eci-terraform-tfe"
+      vcs_repo_identifier = "${var.github_organization_name}/me-terraform-tfe"
     }
     "abbottm-github" = {
       description         = "abbottm github workspace"
       execution_mode      = "remote"
       organization_name   = var.organization_name
       project_id          = module.project["abbottm-project"].id
-      vcs_repo_identifier = "${var.github_organization_name}/fem-eci-terraform-tfe"
+      vcs_repo_identifier = "${var.github_organization_name}/me-terraform-github"
     }
   }
 }
